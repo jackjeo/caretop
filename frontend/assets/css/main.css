@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply bg-background text-text-primary;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans antialiased;
+  }
+
+  ::selection {
+    @apply bg-primary/30 text-white;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-xl border border-border rounded-2xl;
+  }
+
+  .gradient-border {
+    @apply relative overflow-hidden;
+  }
+
+  .gradient-border::before {
+    content: '';
+    @apply absolute inset-0 rounded-2xl p-[1px];
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.5), transparent 50%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+
+  .btn-primary {
+    @apply bg-primary hover:brightness-110 text-white font-medium px-6 py-2.5 rounded-xl transition-all duration-200;
+  }
+
+  .btn-secondary {
+    @apply bg-card hover:bg-cardHover border border-border text-white font-medium px-6 py-2.5 rounded-xl transition-all duration-200;
+  }
+
+  .input-field {
+    @apply bg-card border border-border rounded-xl px-4 py-2.5 text-white placeholder-text-muted focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all;
+  }
+
+  .link-hover {
+    @apply text-text-secondary hover:text-primary transition-colors duration-200;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold font-heading;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-400 to-primary;
+  }
+}

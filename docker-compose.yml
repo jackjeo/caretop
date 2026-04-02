@@ -1,0 +1,75 @@
+version: '3.8'
+
+services:
+  # ========== 后端 API ==========
+  api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    image: caretop-api:latest
+    container_name: caretop-api
+    ports:
+      - "8080:8080"
+    environment:
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_USER=caretop
+      - DB_PASSWORD=caretop123
+      - DB_NAME=caretop
+      - JWT_SECRET=caretop-secret-key-change-in-production
+      - SERVER_PORT=8080
+      - REDIS_ADDR=redis:6379
+    depends_on:
+      - db
+      - redis
+    restart: unless-stopped
+    networks:
+      - caretop-network
+
+  # ========== 前端 ==========
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    image: caretop-frontend:latest
+    container_name: caretop-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - api
+    restart: unless-stopped
+    networks:
+      - caretop-network
+
+  # ========== 数据库 ==========
+  db:
+    image: postgres:15-alpine
+    container_name: caretop-db
+    environment:
+      - POSTGRES_USER=caretop
+      - POSTGRES_PASSWORD=caretop123
+      - POSTGRES_DB=caretop
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+    networks:
+      - caretop-network
+
+  # ========== Redis ==========
+  redis:
+    image: redis:7-alpine
+    container_name: caretop-redis
+    ports:
+      - "6379:6379"
+    restart: unless-stopped
+    networks:
+      - caretop-network
+
+networks:
+  caretop-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
