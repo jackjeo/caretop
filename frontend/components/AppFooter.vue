@@ -92,14 +92,14 @@
           © 2026 凯普软件 版权所有 | <a href="https://beian.miit.gov.cn/" target="_blank" class="hover:text-primary">粤ICP备13041060号</a>
         </p>
         <div class="flex items-center gap-6">
+          <button @click="showChangelog = true" class="text-text-secondary hover:text-primary transition-colors text-sm">
+            更新日志 <span class="text-primary">v1.0.1</span>
+          </button>
           <a href="#" class="text-text-secondary hover:text-primary transition-colors text-sm">
             服务条款
           </a>
           <a href="#" class="text-text-secondary hover:text-primary transition-colors text-sm">
             隐私政策
-          </a>
-          <a href="#" class="text-text-secondary hover:text-primary transition-colors text-sm">
-            Cookie设置
           </a>
         </div>
       </div>
@@ -115,4 +115,8 @@ const products = [
   { name: 'HenryIway', slug: 'henryiway' },
   { name: 'Remote Desktop', slug: 'remote-desktop' }
 ]
+
+const showChangelog = ref(false)
 </script>
+
+<ChangelogModal :is-open="showChangelog" @close="showChangelog = false" />

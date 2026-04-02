@@ -97,7 +97,7 @@ const handleSubmit = async () => {
   error.value = ''
   const result = await login({ email: form.email, password: form.password })
   if (result.success) {
-    router.push('/')
+    await router.push('/')
   } else {
     error.value = result.error || '登录失败'
   }
