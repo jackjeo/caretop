@@ -24,6 +24,7 @@ export const useAuth = () => {
   const user = useState<User | null>('auth-user', () => null)
   const token = useState<string | null>('auth-token', () => null)
   const isLoading = ref(false)
+  const initialized = ref(false)
 
   const isLoggedIn = computed(() => !!user.value)
   const isAdmin = computed(() => user.value?.role === 'admin')
@@ -106,13 +107,19 @@ export const useAuth = () => {
   }
 
   const initAuth = async () => {
-    if (import.meta.client) {
-      const storedToken = localStorage.getItem('auth_token')
-      if (storedToken) {
-        token.value = storedToken
-        await fetchUser()
-      }
+    if (!import.meta.client || initialized.value) return
+    initialized.value = true
+    
+    const storedToken = localStorage.getItem('auth_token')
+    if (storedToken) {
+      token.value = storedToken
+      await fetchUser()
     }
+  }
+
+  // Auto-initialize on client side
+  if (import.meta.client && !initialized.value) {
+    initAuth()
   }
 
   return {
