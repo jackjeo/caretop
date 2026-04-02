@@ -24,8 +24,6 @@ export const useAuth = () => {
   const user = useState<User | null>('auth-user', () => null)
   const token = useState<string | null>('auth-token', () => null)
   const isLoading = ref(false)
-  const initialized = ref(false)
-
   const isLoggedIn = computed(() => !!user.value)
   const isAdmin = computed(() => user.value?.role === 'admin')
 
@@ -107,19 +105,13 @@ export const useAuth = () => {
   }
 
   const initAuth = async () => {
-    if (!import.meta.client || initialized.value) return
-    initialized.value = true
+    if (typeof window === 'undefined') return // SSR 跳过
     
     const storedToken = localStorage.getItem('auth_token')
-    if (storedToken) {
+    if (storedToken && !token.value) {
       token.value = storedToken
       await fetchUser()
     }
-  }
-
-  // Auto-initialize on client side
-  if (import.meta.client && !initialized.value) {
-    initAuth()
   }
 
   return {
