@@ -39,7 +39,7 @@ export default defineNuxtConfig({
   nitro: {
     routeRules: {
       '/api/**': {
-        proxy: 'http://localhost:8080/api/v1/**'
+        proxy: 'http://caretop-api:8080/api/v1/**'
       }
     }
   },
