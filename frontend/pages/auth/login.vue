@@ -17,12 +17,12 @@
       <div class="glass-card p-8">
         <form class="space-y-6" @submit.prevent="handleSubmit">
           <div>
-            <label class="block text-text-secondary text-sm mb-2">用户名 / 邮箱</label>
+            <label class="block text-text-secondary text-sm mb-2">邮箱</label>
             <input
-              v-model="form.username"
-              type="text"
+              v-model="form.email"
+              type="email"
               class="input-field w-full"
-              placeholder="请输入用户名或邮箱"
+              placeholder="请输入邮箱"
               required
             />
           </div>
@@ -86,7 +86,7 @@ const { login, isLoading } = useAuth()
 const router = useRouter()
 
 const form = reactive({
-  username: '',
+  email: '',
   password: ''
 })
 
@@ -95,7 +95,7 @@ const error = ref('')
 
 const handleSubmit = async () => {
   error.value = ''
-  const result = await login(form)
+  const result = await login({ email: form.email, password: form.password })
   if (result.success) {
     router.push('/')
   } else {
