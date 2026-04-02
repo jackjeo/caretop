@@ -29,7 +29,7 @@
               <span v-if="thread.isPinned" class="px-2 py-1 text-xs font-medium rounded bg-yellow-500/20 text-yellow-400">
                 📌 置顶
               </span>
-              <span v-if="thread.isEssence" class="px-2 py-1 text-xs font-medium rounded bg-pink-500/20 text-pink-400">
+              <span v-if="thread.isEssence" class="px-2 py-1 text-xs font-medium rounded bg-amber-500/20 text-amber-400">
                 ✨ 精华
               </span>
             </div>

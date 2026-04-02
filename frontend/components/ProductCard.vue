@@ -3,7 +3,7 @@
     :to="`/products/${product.slug}`"
     class="block glass-card p-6 hover:border-primary/50 transition-all duration-300 group"
     :class="{
-      'col-span-2 row-span-2': size === 'large',
+      'lg:col-span-2 lg:row-span-2': size === 'large',
       'col-span-1 row-span-1': size === 'medium' || size === 'small'
     }"
   >
@@ -70,7 +70,7 @@
       <span
         v-for="tag in product.tags"
         :key="tag"
-        class="px-2 py-1 text-xs rounded-lg bg-cardHover text-text-secondary"
+        class="px-2 py-1 text-xs rounded-lg border border-primary/25 bg-primary/10 text-primary"
       >
         {{ tag }}
       </span>
@@ -134,7 +134,7 @@ const productsData: Record<string, Product> = {
     tagline: '远程桌面工具',
     description: '简单易用的远程桌面连接工具，支持多平台，安全的远程访问体验。',
     icon: Monitor,
-    color: '#8B5CF6',
+    color: '#0EA5E9',
     tags: ['远程', '桌面', '跨平台']
   }
 }

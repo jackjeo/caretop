@@ -1,16 +1,16 @@
 <template>
   <NuxtLink
     :to="`/forum/${thread.board.slug}/${thread.id}`"
-    class="glass-card p-4 hover:border-primary/50 transition-all duration-300 group"
+    class="block glass-card p-4 hover:border-primary/50 transition-all duration-300 group"
   >
     <div class="flex items-start gap-4">
       <UserAvatar :user="thread.author" size="medium" />
 
       <div class="flex-1 min-w-0">
         <div class="flex items-center gap-2 flex-wrap">
-          <h3 class="text-white font-medium group-hover:text-primary transition-colors line-clamp-1">
+          <h3 class="text-text-primary font-medium group-hover:text-primary transition-colors line-clamp-1">
             <span v-if="thread.isPinned" class="text-yellow-400 mr-1">📌</span>
-            <span v-if="thread.isEssence" class="text-pink-400 mr-1">✨</span>
+            <span v-if="thread.isEssence" class="text-amber-400 mr-1">✨</span>
             {{ thread.title }}
           </h3>
         </div>

@@ -10,7 +10,7 @@ export default defineNuxtConfig({
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         { name: 'description', content: '凯普软件官方网站 - MindLink、HenryIway、Remote Desktop等创新软件产品' },
-        { name: 'theme-color', content: '#6366F1' }
+        { name: 'theme-color', content: '#34D399' }
       ],
       link: [
         { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },

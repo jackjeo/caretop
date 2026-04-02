@@ -6,7 +6,7 @@
 
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div class="text-center max-w-3xl mx-auto">
-          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-text-secondary text-base font-medium mb-6">
             <Sparkles class="w-4 h-4" />
             创新软件解决方案
           </div>
@@ -147,7 +147,7 @@ const productsData = {
     tagline: '远程桌面工具',
     description: '简单易用的远程桌面连接工具，支持多平台，安全的远程访问体验。',
     icon: Monitor,
-    color: '#8B5CF6',
+    color: '#0EA5E9',
     tags: ['远程', '桌面', '跨平台']
   }
 }

@@ -47,8 +47,8 @@
 
       <div class="glass-card p-6">
         <div class="flex items-center justify-between mb-4">
-          <div class="w-12 h-12 rounded-xl bg-purple-500/20 flex items-center justify-center">
-            <Ticket class="w-6 h-6 text-purple-400" />
+          <div class="w-12 h-12 rounded-xl bg-cyan-500/20 flex items-center justify-center">
+            <Ticket class="w-6 h-6 text-cyan-300" />
           </div>
           <span class="text-yellow-400 text-sm flex items-center gap-1">
             <Minus class="w-4 h-4" />
@@ -101,7 +101,7 @@
             to="/admin/tickets"
             class="flex items-center gap-3 p-4 bg-cardHover rounded-xl hover:bg-card transition-colors"
           >
-            <Ticket class="w-5 h-5 text-purple-400" />
+            <Ticket class="w-5 h-5 text-cyan-300" />
             <span class="text-white">处理工单</span>
           </NuxtLink>
           <NuxtLink

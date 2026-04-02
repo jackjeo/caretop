@@ -194,7 +194,7 @@ const productsData: Record<string, any> = {
     tagline: '远程桌面工具',
     description: '简单易用的远程桌面连接工具，支持多平台，安全的远程访问体验，让远程办公更加便捷高效。',
     icon: Monitor,
-    color: '#8B5CF6',
+    color: '#0EA5E9',
     isNew: false,
     screenshot: 'https://picsum.photos/seed/remote-screen/1200/675',
     features: [

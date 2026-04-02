@@ -1,6 +1,6 @@
 <template>
   <div
-    class="rounded-full bg-gradient-to-br from-primary to-blue-600 flex items-center justify-center text-white font-medium overflow-hidden shrink-0"
+    class="rounded-full bg-gradient-to-br from-primary-500 to-primary-700 ring-1 ring-primary/20 shadow-glow flex items-center justify-center text-[rgb(255,255,255)] font-medium overflow-hidden shrink-0"
     :class="sizeClasses"
   >
     <img

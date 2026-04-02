@@ -4,9 +4,13 @@
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
         <div class="col-span-1 md:col-span-1">
           <div class="flex items-center gap-2 mb-4">
-            <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-              <span class="text-white font-bold text-sm">K</span>
-            </div>
+            <span class="brand-logo-wrap">
+              <img
+                :src="'/caretop-logo-icon.png'"
+                alt="Caretop Logo"
+                class="brand-logo w-8 h-8 rounded-lg object-cover"
+              />
+            </span>
             <span class="text-lg font-bold text-white">凯普软件</span>
           </div>
           <p class="text-text-secondary text-sm">

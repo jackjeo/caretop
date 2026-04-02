@@ -3,12 +3,14 @@
     <div class="w-full max-w-md">
       <div class="text-center mb-8">
         <NuxtLink to="/" class="inline-flex items-center gap-2 mb-4">
-          <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
-            <span class="text-white font-bold">K</span>
-          </div>
-          <span class="text-xl font-bold text-white">凯普软件</span>
+          <img
+            :src="'/caretop-logo-icon.png'"
+            alt="Caretop Logo"
+            class="w-10 h-10 rounded-xl object-cover"
+          />
+          <span class="text-xl font-bold text-text-primary">凯普软件</span>
         </NuxtLink>
-        <h1 class="text-2xl font-bold text-white">欢迎回来</h1>
+        <h1 class="text-2xl font-bold text-text-primary">欢迎回来</h1>
         <p class="text-text-secondary mt-2">登录您的账户继续</p>
       </div>
 

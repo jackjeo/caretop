@@ -135,7 +135,7 @@ function typeName(t: string) {
   return { bug: 'Bug报告', feature: '功能建议', consult: '使用咨询', business: '商务合作' }[t] || t
 }
 function typeClass(t: string) {
-  return { bug: 'bg-red-900 text-red-300', feature: 'bg-purple-900 text-purple-300', consult: 'bg-blue-900 text-blue-300', business: 'bg-yellow-900 text-yellow-300' }[t] || ''
+  return { bug: 'bg-red-900 text-red-300', feature: 'bg-cyan-900 text-cyan-300', consult: 'bg-blue-900 text-blue-300', business: 'bg-yellow-900 text-yellow-300' }[t] || ''
 }
 function statusName(s: string) {
   return { pending: '待处理', processing: '处理中', resolved: '已解决', closed: '已关闭' }[s] || s

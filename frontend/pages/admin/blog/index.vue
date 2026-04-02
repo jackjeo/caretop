@@ -140,7 +140,7 @@ function categoryName(cat: string) {
 }
 
 function categoryClass(cat: string) {
-  return { tech: 'bg-blue-900 text-blue-300', product: 'bg-green-900 text-green-300', industry: 'bg-purple-900 text-purple-300' }[cat] || ''
+  return { tech: 'bg-blue-900 text-blue-300', product: 'bg-green-900 text-green-300', industry: 'bg-cyan-900 text-cyan-300' }[cat] || ''
 }
 
 function formatDate(d: string) {

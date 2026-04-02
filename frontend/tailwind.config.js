@@ -11,44 +11,44 @@ export default {
   theme: {
     extend: {
       colors: {
-        // 2026 高级感配色方案
+        // 薄荷清新配色方案（参考图片：青绿渐变）
         primary: {
-          DEFAULT: '#6366F1',   // 主色：靛蓝（低饱和蓝紫）
-          50: '#EEEEFF',
-          100: '#E0E1FD',
-          200: '#C7C8FB',
-          300: '#A5A7F9',
-          400: '#818CF8',      // 渐变浅色
-          500: '#6366F1',      // 主色值
-          600: '#4F46E5',      // 深色变体
-          700: '#4338CA',
-          800: '#3730A3',
-          900: '#312E81',
+          DEFAULT: '#34D399',
+          50: '#ECFDF5',
+          100: '#D1FAE5',
+          200: '#A7F3D0',
+          300: '#6EE7B7',
+          400: '#34D399',
+          500: '#10B981',
+          600: '#059669',
+          700: '#047857',
+          800: '#065F46',
+          900: '#064E3B',
         },
         accent: {
-          DEFAULT: '#22D3EE',  // 点缀色：青蓝（10%占比）
-          hover: '#06B6D4',
+          DEFAULT: '#FACC15',
+          hover: '#EAB308',
         },
         // 背景色系（中性过渡）
-        background: '#0a0a0a',
+        background: 'rgb(var(--color-background) / <alpha-value>)',
         surface: {
-          DEFAULT: '#111827',   // 卡片底色
-          elevated: '#1F2937',  // 浮层
+          DEFAULT: 'rgb(var(--color-surface) / <alpha-value>)',
+          elevated: 'rgb(var(--color-surface-elevated) / <alpha-value>)',
         },
         card: {
-          DEFAULT: '#111827',
-          hover: '#1a2035',
+          DEFAULT: 'rgb(var(--color-card) / <alpha-value>)',
+          hover: 'rgb(var(--color-card-hover) / <alpha-value>)',
         },
-        cardHover: '#1a2035',
+        cardHover: 'rgb(var(--color-card-hover) / <alpha-value>)',
         border: {
-          DEFAULT: '#1F2937',
-          subtle: '#374151',
+          DEFAULT: 'rgb(var(--color-border) / <alpha-value>)',
+          subtle: 'rgb(var(--color-border-subtle) / <alpha-value>)',
         },
         // 文字色系（偏暖灰，减少冷感）
         text: {
-          primary: '#F9FAFB',
-          secondary: '#9CA3AF',  // 降饱和暖灰
-          muted: '#6B7280',
+          primary: 'rgb(var(--color-text-primary) / <alpha-value>)',
+          secondary: 'rgb(var(--color-text-secondary) / <alpha-value>)',
+          muted: 'rgb(var(--color-text-muted) / <alpha-value>)',
         },
         // 状态色
         success: '#34D399',
@@ -56,8 +56,8 @@ export default {
         danger: '#F87171',
         // 渐变色（CSS渐变使用）
         gradient: {
-          primary: 'linear-gradient(135deg, #6366F1 0%, #818CF8 100%)',
-          accent: 'linear-gradient(135deg, #22D3EE 0%, #06B6D4 100%)',
+          primary: 'linear-gradient(135deg, #34D399 0%, #22D3EE 55%, #A3E635 100%)',
+          accent: 'linear-gradient(135deg, #FACC15 0%, #F59E0B 100%)',
           subtle: 'linear-gradient(135deg, #1F2937 0%, #111827 100%)',
         }
       },
@@ -71,10 +71,10 @@ export default {
         '3xl': '24px'
       },
       boxShadow: {
-        'glass': '0 8px 32px rgba(0, 0, 0, 0.4)',
-        'glow': '0 0 24px rgba(99, 102, 241, 0.25)',
-        'glow-accent': '0 0 24px rgba(34, 211, 238, 0.2)',
-        'card': '0 4px 16px rgba(0, 0, 0, 0.3)',
+        'glass': '0 8px 32px rgba(2, 6, 23, 0.18)',
+        'glow': '0 0 28px rgba(52, 211, 153, 0.30)',
+        'glow-accent': '0 0 28px rgba(250, 204, 21, 0.28)',
+        'card': '0 4px 16px rgba(2, 6, 23, 0.12)',
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

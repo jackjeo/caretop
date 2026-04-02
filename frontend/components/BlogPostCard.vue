@@ -65,7 +65,7 @@ const categoryClass = computed(() => {
   const classes: Record<string, string> = {
     '技术文章': 'bg-blue-500/20 text-blue-400',
     '产品动态': 'bg-green-500/20 text-green-400',
-    '行业洞察': 'bg-purple-500/20 text-purple-400'
+    '行业洞察': 'bg-cyan-500/20 text-cyan-300'
   }
   return classes[props.post.category] || 'bg-gray-500/20 text-gray-400'
 })

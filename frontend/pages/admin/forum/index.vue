@@ -36,7 +36,7 @@
               </div>
               <div class="flex gap-2 ml-2 shrink-0">
                 <button v-if="!thread.is_pinned" @click="pinThread(thread)" class="text-yellow-400 hover:text-yellow-300 text-xs">置顶</button>
-                <button v-if="!thread.is_essential" @click="essentialThread(thread)" class="text-purple-400 hover:text-purple-300 text-xs">加精</button>
+                <button v-if="!thread.is_essential" @click="essentialThread(thread)" class="text-cyan-300 hover:text-cyan-200 text-xs">加精</button>
                 <button @click="deleteThread(thread.id)" class="text-red-400 hover:text-red-300 text-xs">删</button>
               </div>
             </div>
