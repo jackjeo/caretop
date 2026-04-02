@@ -220,7 +220,7 @@ import { ChevronDown, MessageCircle, Globe, Monitor, User, Settings, LogOut, Sun
 import { useAuth } from '~/composables/useAuth'
 import { useTheme } from '~/composables/useTheme'
 
-const { user, isLoggedIn, isAdmin, logout } = useAuth()
+const { user, isLoggedIn, isAdmin, logout, initAuth } = useAuth()
 const productsRef = ref<HTMLElement | null>(null)
 const userRef = ref<HTMLElement | null>(null)
 const themeRef = ref<HTMLElement | null>(null)
@@ -284,6 +284,7 @@ const handleLogout = () => {
 }
 
 onMounted(() => {
+  initAuth()
   document.addEventListener('click', (e) => {
     if (productsRef.value && !productsRef.value.contains(e.target as Node)) {
       showProducts.value = false
