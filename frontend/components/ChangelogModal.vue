@@ -43,6 +43,15 @@ const close = () => emit('close')
 
 const changelog = [
   {
+    version: '1.0.2',
+    date: '2026-04-02',
+    changes: [
+      '修复更新日志弹窗点击无响应的问题',
+      '修复useAuth初始化逻辑 - 移除SSR时的auto-init避免401错误',
+      '添加登录页面登录后的页面跳转'
+    ]
+  },
+  {
     version: '1.0.1',
     date: '2026-04-02',
     changes: [
