@@ -48,9 +48,10 @@ export const useAuth = () => {
         body: credentials
       })
       const { token: authToken, user: authUser } = response.data
-      // 保存 token 到 localStorage
+      // 保存 token 和 user 到 localStorage
       if (typeof window !== 'undefined') {
         localStorage.setItem('auth_token', authToken)
+        localStorage.setItem('auth_user', JSON.stringify(authUser))
       }
       // 设置状态
       token.value = authToken
@@ -75,6 +76,7 @@ export const useAuth = () => {
       user.value = authUser
       if (typeof window !== 'undefined') {
         localStorage.setItem('auth_token', authToken)
+        localStorage.setItem('auth_user', JSON.stringify(authUser))
       }
       return { success: true }
     } catch (error: any) {
@@ -87,8 +89,9 @@ export const useAuth = () => {
   const logout = () => {
     user.value = null
     token.value = null
-    if (import.meta.client) {
+    if (typeof window !== 'undefined') {
       localStorage.removeItem('auth_token')
+      localStorage.removeItem('auth_user')
     }
     navigateTo('/')
   }
@@ -112,9 +115,21 @@ export const useAuth = () => {
     if (typeof window === 'undefined') return // SSR 跳过
     
     const storedToken = localStorage.getItem('auth_token')
+    const storedUser = localStorage.getItem('auth_user')
+    
     if (storedToken && !token.value) {
       token.value = storedToken
-      await fetchUser()
+      // 优先从 localStorage 恢复 user，避免 API 调用失败
+      if (storedUser) {
+        try {
+          user.value = JSON.parse(storedUser)
+        } catch {
+          // 解析失败，尝试调用 API
+          await fetchUser()
+        }
+      } else {
+        await fetchUser()
+      }
     }
   }
 

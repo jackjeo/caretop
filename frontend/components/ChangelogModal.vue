@@ -43,12 +43,10 @@ const close = () => emit('close')
 
 const changelog = [
   {
-    version: '1.0.4',
+    version: '1.0.5',
     date: '2026-04-03',
     changes: [
-      '修复API响应格式问题 - useAuth所有函数正确解析 {code, message, data} 格式',
-      'login, fetchUser, register, updateProfile 全部修复',
-      '前端已测试: 登录返回token，/auth/me正确返回用户信息'
+      '修复登录状态恢复 - 将用户信息保存到localStorage，恢复时优先使用避免API调用失败'
     ]
   },
   {
