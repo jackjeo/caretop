@@ -216,7 +216,7 @@
 </template>
 
 <script setup lang="ts">
-import { ChevronDown, MessageCircle, Globe, Monitor, User, Settings, LogOut, Sun, Moon, Menu, X } from 'lucide-vue-next'
+import { ChevronDown, MessageCircle, Globe, Monitor, User, Settings, LogOut, Sun, Moon, Menu, X, Users } from 'lucide-vue-next'
 import { useAuth } from '~/composables/useAuth'
 import { useTheme } from '~/composables/useTheme'
 
@@ -249,7 +249,8 @@ const currentThemeIcon = computed(() => {
 const products = [
   { name: 'MindLink', slug: 'mindlink', tagline: '高效团队协作工具', icon: MessageCircle },
   { name: 'HenryIway', slug: 'henryiway', tagline: '智能工作流引擎', icon: Globe },
-  { name: 'Remote Desktop', slug: 'remote-desktop', tagline: '远程桌面工具', icon: Monitor }
+  { name: 'Remote Desktop', slug: 'remote-desktop', tagline: '远程桌面工具', icon: Monitor },
+  { name: '凯普HRM', slug: 'katop-hrm', tagline: '人力资源管理系统', icon: Users }
 ]
 
 const toggleProducts = () => {
