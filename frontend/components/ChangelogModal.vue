@@ -43,10 +43,12 @@ const close = () => emit('close')
 
 const changelog = [
   {
-    version: '1.0.3',
-    date: '2026-04-02',
+    version: '1.0.4',
+    date: '2026-04-03',
     changes: [
-      '修复登录后页面状态不更新 - 登录成功后强制刷新页面'
+      '修复API响应格式问题 - useAuth所有函数正确解析 {code, message, data} 格式',
+      'login, fetchUser, register, updateProfile 全部修复',
+      '前端已测试: 登录返回token，/auth/me正确返回用户信息'
     ]
   },
   {

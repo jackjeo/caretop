@@ -30,10 +30,10 @@ export const useAuth = () => {
   const fetchUser = async () => {
     if (!token.value) return
     try {
-      const data = await $fetch<User>(`${config.public.apiBase}/auth/me`, {
+      const response = await $fetch<{ code: number; message: string; data: User }>(`${config.public.apiBase}/auth/me`, {
         headers: { Authorization: `Bearer ${token.value}` }
       })
-      user.value = data
+      user.value = response.data
     } catch {
       user.value = null
       token.value = null
@@ -43,17 +43,18 @@ export const useAuth = () => {
   const login = async (credentials: LoginCredentials) => {
     isLoading.value = true
     try {
-      const data = await $fetch<{ token: string; user: User }>(`${config.public.apiBase}/auth/login`, {
+      const response = await $fetch<{ code: number; message: string; data: { token: string; user: User } }>(`${config.public.apiBase}/auth/login`, {
         method: 'POST',
         body: credentials
       })
+      const { token: authToken, user: authUser } = response.data
       // 保存 token 到 localStorage
       if (typeof window !== 'undefined') {
-        localStorage.setItem('auth_token', data.token)
+        localStorage.setItem('auth_token', authToken)
       }
       // 设置状态
-      token.value = data.token
-      user.value = data.user
+      token.value = authToken
+      user.value = authUser
       return { success: true }
     } catch (error: any) {
       return { success: false, error: error.data?.message || '登录失败' }
@@ -65,14 +66,15 @@ export const useAuth = () => {
   const register = async (data: RegisterData) => {
     isLoading.value = true
     try {
-      const response = await $fetch<{ token: string; user: User }>(`${config.public.apiBase}/auth/register`, {
+      const response = await $fetch<{ code: number; message: string; data: { token: string; user: User } }>(`${config.public.apiBase}/auth/register`, {
         method: 'POST',
         body: data
       })
-      token.value = response.token
-      user.value = response.user
-      if (import.meta.client) {
-        localStorage.setItem('auth_token', response.token)
+      const { token: authToken, user: authUser } = response.data
+      token.value = authToken
+      user.value = authUser
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('auth_token', authToken)
       }
       return { success: true }
     } catch (error: any) {
@@ -94,12 +96,12 @@ export const useAuth = () => {
   const updateProfile = async (data: Partial<User>) => {
     if (!token.value) return { success: false, error: '未登录' }
     try {
-      const updated = await $fetch<User>(`${config.public.apiBase}/auth/profile`, {
+      const response = await $fetch<{ code: number; message: string; data: User }>(`${config.public.apiBase}/auth/profile`, {
         method: 'PUT',
         headers: { Authorization: `Bearer ${token.value}` },
         body: data
       })
-      user.value = updated
+      user.value = response.data
       return { success: true }
     } catch (error: any) {
       return { success: false, error: error.data?.message || '更新失败' }
