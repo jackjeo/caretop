@@ -118,7 +118,8 @@
 <script setup lang="ts">
 import {
   Download, Check, MessageCircle, Globe, Monitor, Users, Zap, Shield,
-  Clock, FileText, Bell, Settings, Code, Layers, Database, Cloud
+  Clock, FileText, Bell, Settings, Code, Layers, Database, Cloud,
+  Building2, Calendar, CreditCard, Utensils, Bed, UserCheck, ClipboardList, GraduationCap, Briefcase, TrendingUp, User, FileCheck, UsersRound
 } from 'lucide-vue-next'
 
 const route = useRoute()
@@ -216,6 +217,43 @@ const productsData: Record<string, any> = {
       { title: '使用教程', icon: FileText },
       { title: '常见问题', icon: MessageCircle },
       { title: '更新日志', icon: Zap }
+    ]
+  },
+  'katop-hrm': {
+    name: '凯普人力资源管理系统',
+    slug: 'katop-hrm',
+    category: '企业管理',
+    tagline: '一站式人力资源管理解决方案',
+    description: '凯普人力资源管理系统是一套完善的人力资源管理平台，涵盖组织管理、考勤薪资、招聘培训、绩效考核等模块，助力企业实现人力资源数字化管理。',
+    icon: Users,
+    color: '#6366F1',
+    isNew: true,
+    screenshot: '',
+    features: [
+      { title: '人事组织', description: '支持多组织与集团架构管理，打通入、离、调转全生命周期管理，实现员工自助扫描入职', icon: Building2 },
+      { title: '考勤管理', description: '准确高效的工时管理，助力企业实现灵活排班，覆盖出勤、加班、休假、出差、调休等考勤全场景管理', icon: Calendar },
+      { title: '工资管理', description: '全面实现集团化薪资架构，落地企业薪酬体系，实现自动化薪资核算全流程', icon: CreditCard },
+      { title: '食堂消费', description: '全面支持员工自助充值，可以实现打卡、称重、刷脸等多种消费模式，支持线上订餐与消费记录查询', icon: Utensils },
+      { title: '门禁管控', description: '助力企业人员合规安全通行管理，打通员工排班、访客、加班、请假、工时合规等全场景的门禁联动管控', icon: Shield },
+      { title: '宿舍管理', description: '高效快速解决员工床位分配与水电分担核算，动态反馈员工住宿情况，可以实现水电表智能读取数据', icon: Bed },
+      { title: '访客管理', description: '给访客提供快捷高效的线上预约平台，从预约、审批、人脸下发、生成二维到签到的全过程管理', icon: UserCheck },
+      { title: '审批流程', description: '实现所有单据线上完成审批，支持员工通过移动端发起申请→审批→反馈→归档全过程管理', icon: ClipboardList },
+      { title: '考试管理', description: '简单易用，考试不再受时间地点限制，随机抽题、性能稳定、进程可控、阅卷便捷、有效反作弊', icon: GraduationCap },
+      { title: '培训管理', description: '助力企业高效落地人才培训计划，打通企业培训体系和岗前培训课程，支持线上和线下培训签到', icon: Briefcase },
+      { title: '招聘管理', description: '打通内外招聘需求，快速智能识别所需人才，从招聘申请到offer发送全过程管理', icon: UsersRound },
+      { title: '绩效考核', description: '全员绩效，更好地支撑战略与员工激励，提供目标+绩效评估的一体化全面绩效解决方案', icon: TrendingUp }
+    ],
+    scenarios: [
+      { title: '集团型企业', description: '支持多组织、跨地区的集团化人力资源管理' },
+      { title: '制造业', description: '满足灵活用工、批量入职、车间排班等场景' },
+      { title: '连锁门店', description: '统一管理各门店人员、考勤、薪资等' },
+      { title: '科技企业', description: '支持研发人员绩效管理、项目制考勤等' }
+    ],
+    links: [
+      { title: '产品介绍', icon: FileText },
+      { title: '客户案例', icon: Users },
+      { title: '联系我们', icon: MessageCircle },
+      { title: '预约演示', icon: Calendar }
     ]
   }
 }

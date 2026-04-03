@@ -38,10 +38,11 @@
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <ProductCard :product="productsData.mindlink" size="large" />
           <ProductCard :product="productsData.henryiway" size="medium" />
           <ProductCard :product="productsData['remote-desktop']" size="small" />
+          <ProductCard :product="productsData['katop-hrm']" size="medium" />
         </div>
       </div>
     </section>
@@ -110,7 +111,7 @@
 </template>
 
 <script setup lang="ts">
-import { ArrowRight, Sparkles, MessageCircle, Globe, Monitor } from 'lucide-vue-next'
+import { ArrowRight, Sparkles, MessageCircle, Globe, Monitor, Users, Building2, Calendar, CreditCard, Utensils, Shield, Bed, UserCheck, FileCheck, ClipboardList, GraduationCap, Briefcase, TrendingUp } from 'lucide-vue-next'
 import { useBlog } from '~/composables/useBlog'
 import { useForum } from '~/composables/useForum'
 
@@ -149,6 +150,16 @@ const productsData = {
     icon: Monitor,
     color: '#0EA5E9',
     tags: ['远程', '桌面', '跨平台']
+  },
+  'katop-hrm': {
+    name: '凯普人力资源管理系统',
+    slug: 'katop-hrm',
+    tagline: '一站式人力资源管理解决方案',
+    description: '凯普人力资源管理系统是一套完善的人力资源管理平台，涵盖组织管理、考勤薪资、招聘培训、绩效考核等模块，助力企业实现人力资源数字化管理。',
+    icon: Users,
+    color: '#6366F1',
+    isNew: true,
+    tags: ['人力资源', 'HRM', '企业管理']
   }
 }
 
