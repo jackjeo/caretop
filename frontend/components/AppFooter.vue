@@ -93,7 +93,7 @@
         </p>
         <div class="flex items-center gap-6">
           <button @click="showChangelog = true" class="text-text-secondary hover:text-primary transition-colors text-sm">
-            更新日志 <span class="text-primary">v1.0.2</span>
+            更新日志 <span class="text-primary">v1.0.3</span>
           </button>
           <a href="#" class="text-text-secondary hover:text-primary transition-colors text-sm">
             服务条款

@@ -43,6 +43,13 @@ const close = () => emit('close')
 
 const changelog = [
   {
+    version: '1.0.3',
+    date: '2026-04-02',
+    changes: [
+      '修复登录后页面状态不更新 - 登录成功后强制刷新页面'
+    ]
+  },
+  {
     version: '1.0.2',
     date: '2026-04-02',
     changes: [

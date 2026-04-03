@@ -47,11 +47,13 @@ export const useAuth = () => {
         method: 'POST',
         body: credentials
       })
-      token.value = data.token
-      user.value = data.user
-      if (import.meta.client) {
+      // 保存 token 到 localStorage
+      if (typeof window !== 'undefined') {
         localStorage.setItem('auth_token', data.token)
       }
+      // 设置状态
+      token.value = data.token
+      user.value = data.user
       return { success: true }
     } catch (error: any) {
       return { success: false, error: error.data?.message || '登录失败' }

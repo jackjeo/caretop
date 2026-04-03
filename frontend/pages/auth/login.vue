@@ -97,7 +97,9 @@ const handleSubmit = async () => {
   error.value = ''
   const result = await login({ email: form.email, password: form.password })
   if (result.success) {
+    // 登录成功后强制刷新页面确保状态同步
     await router.push('/')
+    window.location.reload()
   } else {
     error.value = result.error || '登录失败'
   }
