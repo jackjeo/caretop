@@ -105,6 +105,7 @@
       </div>
     </div>
   </footer>
+  <ChangelogModal :is-open="showChangelog" @close="showChangelog = false" />
 </template>
 
 <script setup lang="ts">
@@ -119,5 +120,3 @@ const products = [
 
 const showChangelog = ref(false)
 </script>
-
-<ChangelogModal :is-open="showChangelog" @close="showChangelog = false" />
